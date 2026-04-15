@@ -6,8 +6,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #f5f7fb;
-    color: #333;
+    background: #ffffff;
+    color: #000000;
+    
 }
 
 .navbar {
@@ -24,6 +25,7 @@ body {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+    padding: 15px 20px;
 }
 
 .container {
@@ -85,6 +87,13 @@ button:hover {
     border: 1px solid #000000;
 }
 
+input[type="checkbox"] {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
 img {
     width: 100%;
     height: auto;
@@ -97,5 +106,59 @@ img {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    
+
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 15px;
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+a.btn-secondary {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-danger {
+    display: inline-block;
+    margin-top: 15px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+a.btn-danger {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #ff9999;
+    color: white;
+    border: 1px solid #ff4d4d;
+
+}
+
+small {
+    display: block;
+    margin: 15px 0;
+    color: gray;
+    gap: 2rem;
 }

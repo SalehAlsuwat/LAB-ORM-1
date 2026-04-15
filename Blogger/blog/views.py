@@ -23,3 +23,28 @@ def add_post_view(request: HttpRequest):
         return redirect('blog:home_view')
 
     return render(request, 'blog/add_post.html')
+
+
+def detail_post_view(request: HttpRequest, post_id: int):
+    post = Post.objects.get(id=post_id)
+    return render(request, 'blog/post_details.html', {'post': post})
+
+
+def update_post_view(request: HttpRequest, post_id: int):
+    post = Post.objects.get(id=post_id)
+
+    if request.method == 'POST':
+        post.title = request.POST.get('title')
+        post.content = request.POST.get('content')
+        image = request.FILES.get('image')
+        if "image" in request.FILES: post.image = request.FILES['image']
+        post.save()
+        return redirect('blog:home_view')
+    
+    return render(request, 'blog/update_post.html', {'post': post})
+
+
+def delete_post_view(request: HttpRequest, post_id: int):
+    post = Post.objects.get(id=post_id)
+    post.delete()
+    return redirect('blog:home_view')
